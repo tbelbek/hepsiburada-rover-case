@@ -32,7 +32,7 @@ namespace hepsiburada_mars_rover
             this.Direction = GetEnumList()[index];
         }
 
-        private void MoveInSameDirection()
+        private void MoveOne()
         {
             switch (this.Direction)
             {
@@ -58,7 +58,7 @@ namespace hepsiburada_mars_rover
                 switch (move)
                 {
                     case 'M':
-                        this.MoveInSameDirection();
+                        this.MoveOne();
                         break;
                     case 'L':
                         this.Rotate90Left();
