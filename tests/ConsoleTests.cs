@@ -63,7 +63,7 @@ namespace tests
             var maxPoints = new KeyValuePair<int, int>(5, 5);
             var moves = "SDFSDFS";
 
-            Assert.ThrowsException<Exception>(() => moveData.Go(maxPoints, moves));
+            Assert.IsFalse(moveData.Go(maxPoints, moves));
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace tests
         {
             try
             {
-                Mover.MoveProcess("1 2 N", new KeyValuePair<int, int>(5,5),"LMLMLMM");
+                Mover.MoveProcess("1 2 N", new KeyValuePair<int, int>(5, 5), "LMLMLMM");
                 return; // indicates success
             }
             catch (Exception ex)
