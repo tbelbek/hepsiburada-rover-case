@@ -78,5 +78,20 @@ namespace tests
         {
             Assert.IsInstanceOfType(Mover.CreateBoundaries("5 5"), typeof(KeyValuePair<int, int>));
         }
+
+        [TestMethod]
+        public void MoveProcessTest()
+        {
+            try
+            {
+                Mover.MoveProcess("1 2 N", new KeyValuePair<int, int>(5,5),"LMLMLMM");
+                return; // indicates success
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+        }
+
     }
 }
