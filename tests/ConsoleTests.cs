@@ -65,5 +65,18 @@ namespace tests
 
             Assert.ThrowsException<Exception>(() => moveData.Go(maxPoints, moves));
         }
+
+        [TestMethod]
+        public void InputPatternCheckerTest()
+        {
+            Assert.IsFalse(Mover.CheckInputPattern("LMLMLMLMM", "[^MLR]"));
+            Assert.IsTrue(Mover.CheckInputPattern("LMLRTEMLMLMM", "[^MLR]"));
+        }
+
+        [TestMethod]
+        public void CreateBoundariesTest()
+        {
+            Assert.IsInstanceOfType(Mover.CreateBoundaries("5 5"), typeof(KeyValuePair<int, int>));
+        }
     }
 }
